@@ -2,6 +2,9 @@ import { useEffect, useRef, useState } from 'react';
 import { TodoItemType } from '../types';
 import { TodoItem } from './TodoItem';
 
+import c from './TodoList.module.css'
+import { TodoListControls } from './TodoListControls';
+
 type TodoListProps = {
     items :TodoItemType[];
     removeItem: (id:number) => void;
@@ -30,42 +33,18 @@ export const TodoList = ({ items, removeItem, modifyItem, clearCompleted }:TodoL
   }
 
   return (
-    <div className=''>
+    <div className={c.container}>
         {
-            showItems.map(( todo )=>(
-                <div key={todo.id}>
-                  <TodoItem  item={todo} removeItem={removeItem} modifyItem={modifyItem}/>
-                  <hr />
-                </div>
-            ))
+          showItems.map(( todo )=>(
+              <div key={todo.id} 
+                   className='list'
+              >
+                <TodoItem  item={todo} removeItem={removeItem} modifyItem={modifyItem}/>
+                <hr className={c.line}/>
+              </div>
+          ))
         }
-        <div className=''>
-          <p className=''>
-            {showItems.reduce(( acc, c ) => c.done ? acc : acc+1 , 0)} items left
-          </p>
-          <div className=''>
-            <input ref={allInput} type="radio" id='all' name='show' className=''
-               onChange={()=>filterTodos('all')}
-            />
-            <label htmlFor="all" className=''>All</label>
-            <input type="radio" id='active' name='show' 
-                   className=''
-                   onChange={()=>filterTodos('active')}
-            />
-            <label htmlFor="active" className=''>Active</label>
-            <input type="radio" id='completed' name='show' className=''
-              onChange={()=>filterTodos('completed')}
-            />
-            <label htmlFor="completed" className=''>Completed</label>
-          </div>
-          <div>
-            <button className=''
-                    onClick={()=>clearCompleted()}
-            >
-              Clear completed
-            </button>
-          </div>
-        </div>
+       <TodoListControls itemsLeft={items.reduce(( acc, cur ) => cur.done ? acc : acc+1 , 0)} filterTodos={filterTodos} clearCompleted={clearCompleted} ref={allInput}/>
     </div>
   )
 }
