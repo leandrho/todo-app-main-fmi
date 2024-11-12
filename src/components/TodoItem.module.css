@@ -1,6 +1,3 @@
-:root{
-    
-}
 .container{
     height: var(--item-height);
     width: var(--item-width);
@@ -53,6 +50,27 @@
 }
 .item:hover > .item__btn{
     display: block;
+}
+.item:hover:not(:has(.item__checkbox:checked))  .item__label{
+    background-image: var(--bg-checked);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    border: none;
+    position: relative;
+}
+.item:hover:not(:has(.item__checkbox:checked)) .item__label::after{
+    content: '';
+    position: absolute;
+    width: calc(var(--check-size) - 4px);
+    height: calc(var(--check-size) - 4px);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 2px solid transparent;
+    border-radius: 50%;
+    background-color: var(--bg-main);
+
 }
 .item__btn_svg{
     display: none;

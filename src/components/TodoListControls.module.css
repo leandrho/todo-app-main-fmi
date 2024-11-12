@@ -35,3 +35,6 @@
 .input__control_label{
     cursor: pointer;
 }
+.input__control_label:hover, .clear:hover{
+    color: var(--hover-light);
+}

@@ -18,7 +18,7 @@
   --text-menu: var(--Dark-Grayish-Blue);
   --text-main: var(--Very-Dark-Grayish-Blue);
   --hover-light: var(--Very-Dark-Grayish-Blue);
-  --text-form: var(--Dark-Grayish-Blue);
+  --text-form: var(--Very-Dark-Grayish-Blue);
 
   /* General */
   --item-height: 64px;
@@ -39,18 +39,14 @@
   --bg-body: var(--Very-Dark-Blue);
   --border-check: var(--Very-Dark-Grayish-Blue);
   --hover-light: var(--Light-Grayish-Blue-hover);
-  --text-completed: var(--Dark-Grayish-Blue);
-  /* --text-completed: var(--Light-Grayish-Blue);
+  --text-completed: var(--Very-Dark-Grayish-Blue);
   --text-menu: var(--Dark-Grayish-Blue);
-  --text-main: var(--Very-Dark-Grayish-Blue); */
+  --text-main: var(--Light-Grayish-Blue); 
 }
 *, *::after, *::before{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
-body{
-
 }
 input, button{
     outline: 0;
