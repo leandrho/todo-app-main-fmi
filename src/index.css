@@ -1,7 +1,7 @@
 :root{
-  --Bright-Blue: hsl(220, 98%, 61%);
+  --bright-blue: hsl(220, 98%, 61%);
 
-  --Check-Background: linear-gradient(to right bottom, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+  --bg-checked: linear-gradient(to right bottom, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
   --grad-from: hsl(192, 100%, 67%);
   
   --grad-to: hsl(280, 87%, 65%);
@@ -11,26 +11,35 @@
   --Dark-Grayish-Blue: #9394a5;
   --Very-Dark-Grayish-Blue: hsl(235, 19%, 35%);
 
+  --bg-main: white;
   --bg-body: var(--Very-Light-Gray);
   --border-check: var(--Very-Light-Grayish-Blue);
   --text-completed: var(--Light-Grayish-Blue);
   --text-menu: var(--Dark-Grayish-Blue);
   --text-main: var(--Very-Dark-Grayish-Blue);
   --hover-light: var(--Very-Dark-Grayish-Blue);
+  --text-form: var(--Dark-Grayish-Blue);
 
+  /* General */
+  --item-height: 64px;
+  --item-width: 540px;
+  --check-size: 24px;
 }
 .dark{
   --Very-Dark-Blue: hsl(235, 21%, 11%);
   --Very-Dark-Desaturated-Blue: hsl(235, 24%, 19%);
   --Light-Grayish-Blue: hsl(234, 39%, 85%);
   --Light-Grayish-Blue-hover: hsl(236, 33%, 92%);
-  --Dark-Grayish-Blue: hsl(234, 11%, 52%);
+  --Dark-Grayish-Blue: hsl(233, 11%, 52%);
   --Very-Dark-Grayish-Blue: hsl(233, 14%, 35%);
   --Very-Dark-Grayish-Blue2: hsl(237, 14%, 26%);
 
+  --text-form: var(--Light-Grayish-Blue);
+  --bg-main: var(--Very-Dark-Desaturated-Blue);
   --bg-body: var(--Very-Dark-Blue);
-  --border-check: var(--Very-Dark-Desaturated-Blue);
+  --border-check: var(--Very-Dark-Grayish-Blue);
   --hover-light: var(--Light-Grayish-Blue-hover);
+  --text-completed: var(--Dark-Grayish-Blue);
   /* --text-completed: var(--Light-Grayish-Blue);
   --text-menu: var(--Dark-Grayish-Blue);
   --text-main: var(--Very-Dark-Grayish-Blue); */
@@ -41,5 +50,15 @@
   box-sizing: border-box;
 }
 body{
-    min-height: 100dvh;
+
+}
+input, button{
+    outline: 0;
+    border: none;
+    font-size: 18px;
+    font-family: 'Josefin Sans', sans-serif;
+}
+img{
+  max-width: 100%;
+  display: block;
 }

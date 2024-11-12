@@ -1,0 +1,56 @@
+.app{
+    min-height: 100dvh;
+    font-size: 18px;
+    font-family: 'Josefin Sans', sans-serif;
+    background-color: var(--bg-body);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;    
+    gap: 3rem;
+    padding: 5rem 1rem;
+    background-image: url(/images/bg-desktop-light.jpg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: top;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    max-width: max-content;
+}
+.header{
+    display: flex;
+    justify-content: space-between;
+}
+.title{
+    font-size: 2.5rem;
+    letter-spacing: 0.75rem;
+    color: white;
+}
+.theme__input{
+    display: none;
+}
+.theme__icon{
+    display: inline-block;
+    cursor: pointer;
+    width: 26px;
+    height: 26px;
+    background-image: url(/images/icon-moon.svg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.theme__input:checked + .theme__icon{
+    background-image: url(/images/icon-sun.svg);
+}
+.main{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+.footer{
+    font-size: 13px;
+    color: var(--text-menu);
+}
