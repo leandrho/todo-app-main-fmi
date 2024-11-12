@@ -1,0 +1,37 @@
+:root{
+    --container-height: 50px;
+    --item-font-size: 13px;
+    --controls-font-size: 14px;
+}
+.container{
+    height: var(--container-height);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-inline: 1.5rem;
+    color: var(--text-menu);
+}
+.items{
+    font-size: var(--item-font-size);
+}
+.controls{
+    font-size: var(--controls-font-size);
+    font-weight: 700;
+    display: flex;
+    gap: 1rem;
+}
+.clear{
+    font-size: var(--controls-font-size);
+    background-color: transparent;
+    color: inherit;
+    cursor: pointer;
+}
+.input__control{
+    display: none;
+}
+.input__control:checked + .input__control_label{
+    color: var(--bright-blue);
+}
+.input__control_label{
+    cursor: pointer;
+}
