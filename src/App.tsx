@@ -7,7 +7,7 @@ import { TodoForm, TodoList } from './components';
 import c from './App.module.css'
 
 function App() {
-
+  const appref = useRef<HTMLDivElement>(null)
   const { todoList, addTodo, removeTodo, modifyTodo, clearCompleted } = useTodoApp();
   const [theme, setTheme] = useState(false)
 
@@ -16,14 +16,19 @@ function App() {
       const body :HTMLElement = document.body;
       if(theme){
           body.classList.remove('dark')
-      }
-      else
+          if(appref.current)
+              appref.current.classList.remove('darka');
+      } 
+      else{
         body.classList.add('dark')
+        if(appref.current)
+            appref.current.classList.add('darka');
+      }
       setTheme(!theme);
 
   }
   return (
-    <div className={c.app}>
+    <div ref={appref} className={c.app}>
       <section className={c.container}>
           <header className={c.header}>
             <h1 className={c.title}>TODO</h1>
