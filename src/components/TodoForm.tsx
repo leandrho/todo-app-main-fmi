@@ -1,6 +1,8 @@
 import { useRef } from "react";
 import { TodoItemType } from "../types";
 
+import c from './TodoForm.module.css'
+
 let globalID = 0;
 type TodoFormProps = {
   addTodo : (todo :TodoItemType) => void;
@@ -27,17 +29,17 @@ export const TodoForm = ( { addTodo } :TodoFormProps) => {
   }
 
   return (
-    <form action="#" className="">
-      <div className="">
+    <form action="#" className={c.form}>
+      <div className={c.container}>
         <button aria-label="submit" 
-                className=""
+                className={c.btn}
                 onClick={()=>handleSubmit()}
         />
         <input ref={input} 
                aria-label="Enter new task"
                type="text"  
                placeholder="Create a new todo..." 
-               className="" 
+               className={c.newtodo}
         />
       </div>
     </form>

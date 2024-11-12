@@ -1,0 +1,32 @@
+
+.form{
+    display: flex;
+    width: var(--item-width);
+    background-color: var(--bg-main);
+    border-radius: 10px;
+    padding-inline: 1.5rem;
+}
+.container{
+    height: var(--item-height);
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+.btn{
+    background-color: transparent;
+    width: var(--check-size);
+    height: var(--check-size);
+    border: 2px solid var(--border-check);
+    border-radius: 50%;
+    cursor: pointer;
+}
+.btn:hover{
+    background: var(--bg-checked);
+    background-repeat: no-repeat;
+    border: none;
+}
+.newtodo{
+    display: block;
+    background-color: inherit;
+    color: var(--text-form);
+}
