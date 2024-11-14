@@ -24,7 +24,7 @@ export const TodoItem = ({ item, removeItem, modifyItem }:TodoItemProps) => {
   }
 
   return (
-    <div className={c.container} draggable>
+    <div className={c.container}>
       <div className={c.item}>
         <div className={c.item__content}>
           <input ref={checkinput} 
