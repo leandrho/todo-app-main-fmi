@@ -8,7 +8,7 @@ import c from './App.module.css'
 
 function App() {
   const appref = useRef<HTMLDivElement>(null)
-  const { todoList, addTodo, removeTodo, modifyTodo, clearCompleted } = useTodoApp();
+  const { todoList, addTodo, removeTodo, modifyTodo, clearCompleted, updateOrder } = useTodoApp();
   const [theme, setTheme] = useState(false)
 
   const themeCheck = useRef<HTMLInputElement>(null);
@@ -25,7 +25,6 @@ function App() {
             appref.current.classList.add('darka');
       }
       setTheme(!theme);
-
   }
   return (
     <div ref={appref} className={c.app}>
@@ -40,7 +39,7 @@ function App() {
           <main className={c.main}>
             <TodoForm addTodo={addTodo}/>
             {
-              todoList.length?<TodoList items={todoList} removeItem={removeTodo} modifyItem={modifyTodo} clearCompleted={clearCompleted}/>:null
+              todoList.length?<TodoList items={todoList} removeItem={removeTodo} modifyItem={modifyTodo} clearCompleted={clearCompleted} updateOrder={updateOrder}/>:null
             }
           </main>
       </section>

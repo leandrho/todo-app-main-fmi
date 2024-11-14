@@ -9,7 +9,7 @@ export const useTodoApp = () => {
         setTodoList([...todoList, todo]);//need to check for duplicates? 
     }
     const removeTodo = (id :number) => {
-        setTodoList(todoList.filter( todo => todo.id !== id))
+        setTodoList(todoList.filter( (todo :TodoItemType) => todo.id !== id))
     }
     const modifyTodo = ( todo :TodoItemType ) => {
         setTodoList( todoList.map( t => {
@@ -21,11 +21,15 @@ export const useTodoApp = () => {
     const clearCompleted = () => {
         setTodoList(todoList.filter((t)=>!t.done));
     }
+    const updateOrder = (todos :TodoItemType[]) => {
+        setTodoList(todos);
+    }
     return {
         todoList,
         addTodo,
         removeTodo,
         modifyTodo,
         clearCompleted,
+        updateOrder,
     };
 }

@@ -10,9 +10,10 @@ type TodoListProps = {
     removeItem: (id:number) => void;
     modifyItem: (todo:TodoItemType)=>void;
     clearCompleted: ()=>void;
+    updateOrder :(items :TodoItemType[])=>void
 }
 
-export const TodoList = ({ items, removeItem, modifyItem, clearCompleted }:TodoListProps) => {
+export const TodoList = ({ items, removeItem, modifyItem, clearCompleted, updateOrder }:TodoListProps) => {
 
   const allInput = useRef<HTMLInputElement>(null);
   const [showItems, setShowItems] = useState<TodoItemType[]>([]);
