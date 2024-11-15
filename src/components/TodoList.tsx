@@ -1,9 +1,9 @@
 import { useEffect, useRef, useState } from 'react';
 import { TodoItemType } from '../types';
-import { TodoItem } from './TodoItem';
 
 import c from './TodoList.module.css'
 import { TodoListControls } from './TodoListControls';
+import { TodoDnDContainer } from './TodoDnDContainer';
 
 type TodoListProps = {
     items :TodoItemType[];
@@ -17,6 +17,10 @@ export const TodoList = ({ items, removeItem, modifyItem, clearCompleted, update
 
   const allInput = useRef<HTMLInputElement>(null);
   const [showItems, setShowItems] = useState<TodoItemType[]>([]);
+
+  const updateContent = (its :TodoItemType[])=>{
+    updateOrder(its);
+  }
 
   useEffect(() => {
     setShowItems(items);
@@ -35,16 +39,7 @@ export const TodoList = ({ items, removeItem, modifyItem, clearCompleted, update
 
   return (
     <div className={c.container}>
-        {
-          showItems.map(( todo )=>(
-              <div key={todo.id} 
-                   className='list'
-              >
-                <TodoItem  item={todo} removeItem={removeItem} modifyItem={modifyItem}/>
-                <hr className={c.line}/>
-              </div>
-          ))
-        }
+       <TodoDnDContainer items={showItems} updateContent={updateContent} removeItem={removeItem} modifyItem={modifyItem} />
        <TodoListControls itemsLeft={items.reduce(( acc, cur ) => cur.done ? acc : acc+1 , 0)} filterTodos={filterTodos} clearCompleted={clearCompleted} ref={allInput}/>
     </div>
   )
