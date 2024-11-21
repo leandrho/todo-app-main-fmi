@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { FormEvent, useRef } from "react";
 import { TodoItemType } from "../types";
 
 import c from './TodoForm.module.css'
@@ -12,7 +12,8 @@ export const TodoForm = ( { addTodo } :TodoFormProps) => {
 
   const input = useRef<HTMLInputElement>(null);
 
-  const handleSubmit = () => {
+  const handleSubmit = (e :FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
     if(input.current){
       if(!input.current.value)
         return;
@@ -29,11 +30,11 @@ export const TodoForm = ( { addTodo } :TodoFormProps) => {
   }
 
   return (
-    <form action="#" className={c.form}>
+    <form action="#" className={c.form} onSubmit={handleSubmit}>
       <div className={c.container}>
         <button aria-label="submit" 
                 className={c.btn}
-                onClick={()=>handleSubmit()}
+                type="submit"
         />
         <input ref={input} 
                aria-label="Enter new task"
