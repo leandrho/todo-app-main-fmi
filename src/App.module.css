@@ -85,4 +85,7 @@
         background-size: 100% 32vh;
         background-position: top;
     }
+    .main{
+        gap: 1rem;
+    }
 }
