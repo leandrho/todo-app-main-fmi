@@ -25,6 +25,16 @@
   --item-width: 540px;
   --check-size: 24px;
 }
+.light{
+  --bg-main: white;
+  --bg-body: var(--Very-Light-Gray);
+  --border-check: var(--Very-Light-Grayish-Blue);
+  --text-completed: var(--Light-Grayish-Blue);
+  --text-menu: var(--Dark-Grayish-Blue);
+  --text-main: var(--Very-Dark-Grayish-Blue);
+  --hover-light: var(--Very-Dark-Grayish-Blue);
+  --text-form: var(--Very-Dark-Grayish-Blue);
+}
 .dark{
   --Very-Dark-Blue: hsl(235, 21%, 11%);
   --Very-Dark-Desaturated-Blue: hsl(235, 24%, 19%);
@@ -57,4 +67,12 @@ input, button{
 img{
   max-width: 100%;
   display: block;
+}
+
+@media screen and (max-width: 570px) {
+  :root{
+    --item-height: 64px;
+    --item-width: 100%;
+    --check-size: 24px;
+  }
 }
