@@ -41,6 +41,7 @@ export const TodoForm = ( { addTodo } :TodoFormProps) => {
                type="text"  
                placeholder="Create a new todo..." 
                className={c.newtodo}
+               id="form-todo-text"
         />
       </div>
     </form>
