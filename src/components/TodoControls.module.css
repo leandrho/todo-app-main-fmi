@@ -29,7 +29,7 @@
 
 @media screen and (max-width: 570px) {
     .controls{
-        background-color: white;
+        background-color: var(--bg-main);
         box-shadow: 0 16px 24px rgba(100, 100, 100, 0.1);
         border-radius: 10px;
     }
