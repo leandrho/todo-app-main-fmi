@@ -1,7 +1,6 @@
 .container{
     max-width: max-content;
     min-width: var(--item-width);
-    border-radius: 50%;
     border-radius: 10px;
     background-color: var(--bg-main);
     box-shadow: 0 16px 24px rgba(100, 100, 100, 0.1);
@@ -14,4 +13,20 @@
 }
 .list{
     border-radius: 10px;
+}
+.wrapper{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+.mobile{
+    display: none;
+}
+@media screen and (max-width: 570px) {
+    .mobile{
+        display: block;
+    }
+    .wrapper{
+        gap: 1rem;
+    }
 }

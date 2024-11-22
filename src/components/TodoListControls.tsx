@@ -1,6 +1,7 @@
 import { forwardRef } from 'react';
 
 import c from './TodoListControls.module.css'
+import { TodoControls } from './TodoControls';
 
 type TodoListControlsProps = {
     itemsLeft :number;
@@ -15,22 +16,8 @@ export const TodoListControls = forwardRef<HTMLInputElement, TodoListControlsPro
           <p className={c.items}>
             {itemsLeft} items left
           </p>
-          <div className={c.controls}>
-            <input ref={ref} type="radio" id='all' name='show' 
-              className={c.input__control}
-              onChange={()=>filterTodos('all')}
-            />
-            <label htmlFor="all" className={c.input__control_label}>All</label>
-            <input type="radio" id='active' name='show' 
-                   className={c.input__control}
-                   onChange={()=>filterTodos('active')}
-            />
-            <label htmlFor="active" className={c.input__control_label}>Active</label>
-            <input type="radio" id='completed' name='show' 
-              className={c.input__control}
-              onChange={()=>filterTodos('completed')}
-            />
-            <label htmlFor="completed" className={c.input__control_label}>Completed</label>
+          <div className={c.desk}>
+            <TodoControls filterTodos={filterTodos} ref={ref}/>
           </div>
           <div>
             <button className={c.clear}

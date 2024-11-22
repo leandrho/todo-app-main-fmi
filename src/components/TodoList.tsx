@@ -4,6 +4,7 @@ import { TodoItemType } from '../types';
 import c from './TodoList.module.css'
 import { TodoListControls } from './TodoListControls';
 import { TodoDnDContainer } from './TodoDnDContainer';
+import { TodoControls } from './TodoControls';
 
 type TodoListProps = {
     items :TodoItemType[];
@@ -38,9 +39,14 @@ export const TodoList = ({ items, removeItem, modifyItem, clearCompleted, update
   }
 
   return (
-    <div className={c.container}>
-       <TodoDnDContainer items={showItems} updateContent={updateContent} removeItem={removeItem} modifyItem={modifyItem} />
-       <TodoListControls itemsLeft={items.reduce(( acc, cur ) => cur.done ? acc : acc+1 , 0)} filterTodos={filterTodos} clearCompleted={clearCompleted} ref={allInput}/>
+    <div className={c.wrapper}>
+      <div className={c.container}>
+        <TodoDnDContainer items={showItems} updateContent={updateContent} removeItem={removeItem} modifyItem={modifyItem} />
+        <TodoListControls itemsLeft={items.reduce(( acc, cur ) => cur.done ? acc : acc+1 , 0)} filterTodos={filterTodos} clearCompleted={clearCompleted} ref={allInput}/>
+      </div>
+      <div className={c.mobile}>
+          <TodoControls filterTodos={filterTodos} ref={allInput}/>
+        </div>
     </div>
   )
 }

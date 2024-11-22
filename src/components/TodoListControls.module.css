@@ -14,27 +14,17 @@
 .items{
     font-size: var(--item-font-size);
 }
-.controls{
-    font-size: var(--controls-font-size);
-    font-weight: 700;
-    display: flex;
-    gap: 1rem;
-}
 .clear{
     font-size: var(--controls-font-size);
     background-color: transparent;
     color: inherit;
     cursor: pointer;
 }
-.input__control{
-    display: none;
+.desk{
+    display: block;
 }
-.input__control:checked + .input__control_label{
-    color: var(--bright-blue);
-}
-.input__control_label{
-    cursor: pointer;
-}
-.input__control_label:hover, .clear:hover{
-    color: var(--hover-light);
+@media screen and (max-width: 570px) {
+    .desk{
+        display: none;
+    }
 }
