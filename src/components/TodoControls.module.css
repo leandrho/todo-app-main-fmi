@@ -1,0 +1,36 @@
+:root{
+    --controls-font-size: 14px;
+}
+
+.controls{
+    height: var(--container-height);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-inline: 1.5rem;
+    color: var(--text-menu);
+    font-size: var(--controls-font-size);
+    font-weight: 700;
+    display: flex;
+    gap: 1rem;
+}
+.input__control{
+    display: none;
+}
+.input__control:checked + .input__control_label{
+    color: var(--bright-blue);
+}
+.input__control_label{
+    cursor: pointer;
+}
+.input__control_label:hover, .clear:hover{
+    color: var(--hover-light);
+}
+
+@media screen and (max-width: 570px) {
+    .controls{
+        background-color: white;
+        box-shadow: 0 16px 24px rgba(100, 100, 100, 0.1);
+        border-radius: 10px;
+    }
+}
