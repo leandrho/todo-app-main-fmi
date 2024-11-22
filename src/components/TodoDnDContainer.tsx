@@ -19,6 +19,9 @@ export const TodoDnDContainer = ({items, removeItem, modifyItem, updateContent}:
         const elem :HTMLDivElement = e.target as HTMLDivElement;
         setCurDragId(elem.id);
         setLastVisited(elem.id);
+        const dragImage = new Image();
+        e.dataTransfer?.setDragImage(dragImage, 0, 0);
+        e.stopPropagation();
     }
     const drop = (e: DragEvent<HTMLDivElement>) => {
         e.preventDefault();
