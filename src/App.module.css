@@ -9,15 +9,17 @@
     justify-content: space-around;    
     gap: 3rem;
     padding: 5rem 1rem;
+}
+:global(.lighta){
     background-image: url(/images/bg-desktop-light.jpg);
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: 100% 39vh;
     background-position: top;
 }
 :global(.darka){
     background-image: url(/images/bg-desktop-dark.jpg);
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: 100% 39vh;
     background-position: top;
 }
 .container{
@@ -59,4 +61,28 @@
 .footer{
     font-size: 13px;
     color: var(--text-menu);
+}
+
+@media screen and (max-width: 570px) {
+    .app{ 
+        gap: 2rem;
+        padding: 3.5rem 2rem;
+        align-items: center;
+        justify-content: space-between;    
+    }
+    .title{
+        font-size: 1.875rem;
+    }
+    :global(.lighta){
+        background-image: url(/images/bg-mobile-light.jpg);
+        background-repeat: no-repeat;
+        background-size: 100% 32vh;
+        background-position: top;
+    }
+    :global(.darka){
+        background-image: url(/images/bg-mobile-dark.jpg);
+        background-repeat: no-repeat;
+        background-size: 100% 32vh;
+        background-position: top;
+    }
 }

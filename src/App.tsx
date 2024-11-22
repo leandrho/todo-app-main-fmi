@@ -15,19 +15,25 @@ function App() {
   const changeTheme = () => {
       const body :HTMLElement = document.body;
       if(theme){
-          body.classList.remove('dark')
-          if(appref.current)
-              appref.current.classList.remove('darka');
+        body.classList.remove('dark');
+        body.classList.add('light');
+        if(appref.current){
+            appref.current.classList.remove('darka');
+            appref.current.classList.add('lighta');
+        }
       } 
       else{
         body.classList.add('dark')
-        if(appref.current)
+        body.classList.remove('light')
+        if(appref.current){
+            appref.current.classList.remove('lighta');
             appref.current.classList.add('darka');
+        }
       }
       setTheme(!theme);
   }
   return (
-    <div ref={appref} className={c.app}>
+    <div ref={appref} className={c.app + ' lighta'}>
       <section className={c.container}>
           <header className={c.header}>
             <h1 className={c.title}>TODO</h1>
